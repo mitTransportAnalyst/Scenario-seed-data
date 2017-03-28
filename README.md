@@ -148,5 +148,7 @@ For each corridor, we need a seperate scenario seed data.
 ```
 
 Please see the following link to see what does scenario seed data for the whole Mass Ave corridor look like.
+https://github.com/mitTransportAnalyst/Scenario-seed-data-documentation/blob/master/Mass%20Ave%20seed%20data.json
+
 
 And for reroute function, I need some time to figure out how to make change of it. 
