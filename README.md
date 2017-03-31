@@ -52,6 +52,7 @@ For each corridor, we need a seperate scenario seed data.
 For each corridor and each modification, we need a seperate Geojson file. 
 - Create a shapefile include corridor or station points or new lines you want to show on the map
 - convert shapefile to Geojson file
+You can use this repo to do conversion https://github.com/substack/shp2json
 
 ## Example
 ### Adjust-dwell-time
