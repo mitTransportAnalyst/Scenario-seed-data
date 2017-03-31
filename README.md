@@ -34,8 +34,11 @@ For example, the following is one piece of seed data for Mass Ave. It define the
 In CoAXs, when we select a corridor and then make some changes (like headway/speed) on that corridor, you may want show something on the map to help the user to understand what you have changed. For example, in our livable street workshop, we zoom in to that corridor when we select it and make change of it. Of course, this is optional. You can do nothing when user make some changes. 
 
 Different modification should have different geojson to show on the map:
+
 Adjust speed/frequence/dwell time: Geojson for each corridor
+
 add/remove stops: Geojson for stops
+
 reroute: Geojson for the new route you added
 
 ## How to make scenario seed modification data?
