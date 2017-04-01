@@ -3,14 +3,14 @@
  This documentation is going to tell you what the scenario seed modification and geojson need for CoAXs frontend
 
    
-## What is the scenario seed modification data (required)?
+## What is the scenario seed modification data (required)
 Scenario seed modification data is a JSON file that includes the information that indicates 
 - (1) which bus lines/subway lines you want to make changes (like Line 1, Line CT1...) 
 - (2) what kind of change you want to make(like change speed, frequency, dwell time)
  
 ***And each corridor should have its unique JSON file which means bundle all the bus lines in one corridor into one JSON file. ***
 
-## What is the Geojson (optional) ?
+## What is the Geojson (optional)
 Geojson is a JSON file that includes the data to show the point, line, polygon on the map. Geojson file is optional. 
 
 ## Why CoAXs frontend need scenario seed modification data?
