@@ -35,11 +35,14 @@ In CoAXs, when we select a corridor and then make some changes (like headway/spe
 
 Different modification should have different geojson to show on the map:
 
-Adjust speed/frequence/dwell time: Geojson for each corridor
 
-add/remove stops: Geojson for stops
+**Adjust speed/frequence/dwell time: Geojson for each corridor**
 
-reroute: Geojson for the new route you added
+**Remove stops: Geojson for the stops you removed**
+
+**Remove trips: Geojson for the trips you removed**
+
+**reroute: Geojson for the new route you added**
 
 ## How to make scenario seed modification data?
 For each corridor, we need a seperate scenario seed data. 
