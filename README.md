@@ -1,22 +1,26 @@
-# The scenario seed modification and Geojson documentation
+# CoAXs Modifications: Seed and GeoJSON files
 
- This documentation is going to tell you what the scenario seed modification and geojson need for CoAXs frontend
-
+CoAXs allows users to create their own transit scenarios by setting the parameters of certain pre-defined "seed" modifications.  For example, we can specify through a seed modification that Route 1 can have its speed adjusted, and the front-end interface will allow users to set the speed.
    
-## What is the scenario seed modification data (required)
-Scenario seed modification data is a JSON file that includes the information that indicates 
-- (1) which bus lines/subway lines you want to make changes (like Line 1, Line CT1...) 
-- (2) what kind of change you want to make(like change speed, frequency, dwell time)
+## Seed Modification data (required)
+The seed modification is formatted as a JSON file with information that includes:
+- (1) which transport route[s] you wish to modify (e.g. Route 1, Piccadilly Line...) 
+- (2) what kind of change you want to make (e.g. adjust speed, frequency, dwell time)
  
-***And each corridor should have its unique JSON file which means bundle all the bus lines in one corridor into one JSON file. ***
+***If multiple routes serve a corridor, they can be bundled together into one corridor file (see example [https://github.com/mitTransportAnalyst/Scenario-seed-data-documentation/blob/master/Mass%20Ave%20seed%20data.json](here))***
 
-## What is the Geojson (optional)
-Geojson is a JSON file that includes the data to show the point, line, polygon on the map. Geojson file is optional. 
+## GeoJSON (optional)
+The GeoJSON allows for a map-based representation of where the modification is applied (e.g. the segment in which speed is adjusted).  For the folowing example modification types, you might want to include:
 
-## Why CoAXs frontend need scenario seed modification data?
-In our CoAXs frontend, every time you move the slider bar, it will find the corridor you select and look up the scenario seed data for that corridor and change the the value of scale parameter to the slider value for each bus lines in this scenario seed data.   
+**Adjust speed/frequence/dwell time: GeoJSON for entire route/corridor**
+**Remove stops: GeoJSON points for the stops you removed**
+**Remove trips: GeoJSON line for for the trips you removed**
+**reroute: GeoJSON line for the new route you added**
 
-For example, the following is one piece of seed data for Mass Ave. It define the type of change: "adjust-dwell-time" and the bue line you want to change and the scale(how much you want to change). Basically, CoAXs frontend just changes the scale parameter into the slider value. 
+## Why does CoAXs need seed modification data for scenarios?
+In our CoAXs frontend, every time you move the slider bar, it will find the corridor you select and look up the scenario seed data for that corridor and change the the value of scale parameter to the slider value for each route in this scenario seed data.   
+
+For example, the following is one piece of seed data for Mass Ave. It defines the type of change: "adjust-dwell-time", route you want to change, and the scale (how much you want to change). Basically, CoAXs frontend just changes the scale parameter into the slider value. 
 
 ```json
     {
@@ -30,31 +34,17 @@ For example, the following is one piece of seed data for Mass Ave. It define the
     },
 ```
 
-## Why CoAXs frontend need the Geojson?
-In CoAXs, when we select a corridor and then make some changes (like headway/speed) on that corridor, you may want show something on the map to help the user to understand what you have changed. For example, in our livable street workshop, we zoom in to that corridor when we select it and make change of it. Of course, this is optional. You can do nothing when user make some changes. 
-
-Different modification should have different geojson to show on the map:
-
-
-**Adjust speed/frequence/dwell time: Geojson for each corridor**
-
-**Remove stops: Geojson for the stops you removed**
-
-**Remove trips: Geojson for the trips you removed**
-
-**reroute: Geojson for the new route you added**
-
 ## How to make scenario seed modification data?
 For each corridor, we need a seperate scenario seed data. 
-- For each corridor, we need to create a new scenario in scenario editor
-- put all the bus lines and all the changes you want to make under this scenario. 
+- For each corridor, we need to create a new scenario in [https://github.com/conveyal/analysis-ui](Scenario Editor)
+- Put all the routes and all the changes you want to make under this scenario. 
 - Push the download button, you will get a JSON file
-- Do it for each corridor
+- Repeat for each corridor
 
-## How to make Geojson file?
+## How to make GeoJSON file?
 For each corridor and each modification, we need a seperate Geojson file. 
-- Create a shapefile include corridor or station points or new lines you want to show on the map
-- convert shapefile to Geojson file
+- Create a shapefile including corridor or station points or new lines you want to show on the map
+- convert shapefile to GeoJSON file
 You can use this repo to do conversion https://github.com/substack/shp2json
 
 ## Example
@@ -170,7 +160,5 @@ You can use this repo to do conversion https://github.com/substack/shp2json
     },
 ```
 
-Please see the following link to see what does scenario seed data for the whole Mass Ave corridor look like.
-https://github.com/mitTransportAnalyst/Scenario-seed-data-documentation/blob/master/Mass%20Ave%20seed%20data.json
 
 
