@@ -1,6 +1,6 @@
 # CoAXs Modifications: Seed and GeoJSON files
 
-CoAXs allows users to create their own transit scenarios by setting the parameters of certain pre-defined "seed" modifications.  For example, we can specify through a seed modification that Route 1 can have its speed adjusted, and the front-end interface will allow users to set the speed.
+CoAXs allows users to create their own transit scenarios by setting the parameters of certain pre-defined "seed" modifications.  For example, we can specify through a seed modification that Route 1 can have its speed adjusted, and the front-end interface will allow users to set the speed.  Modification types and parameters can be found [here](http://javadoc.conveyal.com/r5/master/com/conveyal/r5/analyst/scenario/package-summary.html), but not all of these are currently supported by CoAXs.
    
 ## Seed Modification data (required)
 The seed modification is formatted as a JSON file with information that includes:
