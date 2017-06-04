@@ -7,7 +7,7 @@ The seed modification is formatted as a JSON file with information that includes
 - (1) which transport route[s] you wish to modify (e.g. Route 1, Piccadilly Line...) 
 - (2) what kind of change you want to make (e.g. adjust speed, frequency, dwell time)
  
-***If multiple routes serve a corridor, they can be bundled together into one corridor file (see example [https://github.com/mitTransportAnalyst/Scenario-seed-data-documentation/blob/master/Mass%20Ave%20seed%20data.json](here))***
+***If multiple routes serve a corridor, they can be bundled together into one corridor file (see example [here](https://github.com/mitTransportAnalyst/Scenario-seed-data-documentation/blob/master/Mass%20Ave%20seed%20data.json))***
 
 ## GeoJSON (optional)
 The GeoJSON allows for a map-based representation of where the modification is applied (e.g. the segment in which speed is adjusted).  For the folowing example modification types, you might want to include:
@@ -36,7 +36,7 @@ For example, the following is one piece of seed data for Mass Ave. It defines th
 
 ## How to make scenario seed modification data?
 For each corridor, we need a seperate scenario seed data. 
-- For each corridor, we need to create a new scenario in [https://github.com/conveyal/analysis-ui](Scenario Editor)
+- For each corridor, we need to create a new scenario in [Scenario Editor](https://github.com/conveyal/analysis-ui)
 - Put all the routes and all the changes you want to make under this scenario. 
 - Push the download button, you will get a JSON file
 - Repeat for each corridor
